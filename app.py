@@ -10,20 +10,20 @@ import time
 def google_search_with_selenium(query, driver):
     
 
-    # 開啟Google
+    # open Google
     driver.get("https://cse.google.com/cse?cx=117856f7b40b74cf8")
 
-    # 找到搜尋框並輸入查詢詞
+    # input search query
     search_box = driver.find_element(By.ID, "gsc-i-id1") # gsc-i-id1
     search_box.send_keys(query)
 
-    # 找到搜尋按鈕並點擊
+    # get search button
     search_button = driver.find_element(By.CLASS_NAME, "gsc-search-button-v2")
     
     time.sleep(1)
     # search_box.submit()
     search_button.click()
-    time.sleep(1)
+    time.sleep(5)
 
     # get first result
     link = "-"
